@@ -1,0 +1,13 @@
+html 的style属性  就是css
+样式名:样式的值;样式名:样式的值;样式名:样式的值
+css就是改变标签的显示效果
+
+border  边框    粗细(xxpx)  颜色  类型 (solid dotted double) 
+width 宽
+height 高
+position   位置类型   偏移的前置条件 relative absolute
+left       距离左边界多少距离
+top        距离上边界多少距离
+background 背景 
+
+css 选择器  id选择器

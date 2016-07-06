@@ -1,0 +1,7 @@
+git init                        初始化你的git目录
+git add .     . 代表当前目录    把当前目录所有的修改添加进来
+git commit -m "提交的提示信息"  把修改提交
+
+git remote add origin https://github.com/........
+                                把你本地git跟远程的git关联起来
+git push origin master          同步远程git仓库

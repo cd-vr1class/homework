@@ -1,0 +1,47 @@
+javascript   js
+java    
+雷锋 雷峰塔
+
+js 在浏览器 在本地 对网页标签进行操作
+id        <a id="c"> </a>      c.click();
+class     <a class = "c"> </a>
+          document.getElementByClassName("c")[0].click()
+input     <input id="c"/>      c.value = "dsafdsf";
+          .value用在输入框里面
+
+
+在自己的网页里加js代码 
+可以放body 也可以放head    
+放的位置有什么影响   
+html是顺序解析的，
+如果你在script里要用到某标签，
+那么你就必须把script放在该标签后面
+<script>  </script>
+
+
+var div = document.createElement("div")
+;
+
+div.style.width = "100px";
+
+div.style.height = "100px";
+
+
+div.style.border = "1px red solid";
+
+document.body.appendChild(div);
+
+
+var   声明一个变量用的。
+变量   用一个名字来指代某一个值
+var 
+取名字     命名规范
+1    以字母 下划线 中文  $  开头 
+2    除开头以外的部分    字母 下划线 中文  $  数字 
+3    不能使用关键字和保留字
+
+编程    =   赋值操作     左边一定要是个变量 
+先求出=右边的值  ，然后使变量对应的值变成刚刚求出的值  
+
++ - * /  %
+%  取余  
