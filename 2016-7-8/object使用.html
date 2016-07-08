@@ -1,0 +1,21 @@
+<html>
+<head>
+
+</head>
+
+<body>
+<script>
+    var imgobj = {width:"100px",height:"100px",src:"1.jpg"};
+    imgobj.src = prompt("你要显示哪个图片?","1.jpg");
+	imgobj.width = prompt("图片要多宽?","100px");
+	imgobj.height = prompt("图片要多高?","100px");
+	
+	
+	var img = document.createElement('img');
+	img.src = imgobj.src;
+	img.style.width = imgobj.width;
+	img.style.height = imgobj.height;
+	document.body.appendChild(img);
+</script>
+</body>
+</html>
