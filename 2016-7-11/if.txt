@@ -1,4 +1,4 @@
-var day=2;
+var day=1;
 var weather="rain";
 if(day==1)
 {
