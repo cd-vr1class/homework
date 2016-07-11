@@ -1,0 +1,22 @@
+var day=2;
+var weather="rain";
+if(day==1)
+{
+    if(weather=="sun")
+    {
+        alert("run");
+    }else
+    {
+        alert("sleep");
+    }
+}else
+{
+   
+    if(weather=="sun")
+    {
+        alert("shop");
+    }else
+    {
+        alert("eat");
+    }
+}
