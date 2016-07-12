@@ -1,0 +1,35 @@
+<html>
+<body>
+<script>
+var num = prompt("请输入一个数","");
+num = parseInt(num);
+if(num<0||num>100)
+{
+    alert("非法输入");
+}
+else {
+	switch(parseInt(num/10))
+	{
+		
+		
+		case 7:
+		case 8:
+			  alert("一般");
+			  break;
+		case 9:
+		case 10:
+			  alert("优秀");
+			  break;
+		case 6:
+			  alert("及格");
+			  break;
+		default:
+			  alert("差");
+	}
+}
+</script>   
+
+</body>
+
+
+</html>
