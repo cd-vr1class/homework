@@ -1,0 +1,61 @@
+<html>
+<body>
+<script>
+var arr = [[0,0,0,0,0,0],
+           [0,0,0,0,0,0],
+		   [0,0,0,0,0,0],
+		   [0,0,0,0,0,0],
+		   [0,0,0,0,0,0],
+		   [0,0,0,0,0,0]];
+var pos = [[2,0],[2,1],[2,2],[1,2],[0,1]];	   
+for(var i=0;i<pos.length;i++)
+{
+var a = pos[i][0];
+var b = pos[i][1];
+arr[a][b]=1;	
+}
+//打印二维数组
+for(var i =0;i<arr.length;i++)
+{
+    document.write(arr[i].toString()+"<br/>");
+}
+//rule1 值为0的点周围如果有三个点那么它的值就变成1
+function neighbours(x,y){
+    var count = 0;
+		for(var m=-1;m<=1;m++)
+		{
+			for(var n=-1;n<=1;n++)
+			{
+				if(m!=0||n!=0)//过滤本身
+				{
+					if(x+m>=0 && y+n>=0 && x+m<arr.length && y+n<arr[x+m].length){
+						if(arr[x+m][y+n]==1)
+							count++;
+					}
+				}
+			}
+		}
+	return count;
+}
+var born = [];
+for(var i=0;i<arr.length;i++)
+{
+    for(var j=0;j<arr[i].length;j++)
+	{	
+	    if(neighbours(i,j) ==3 && arr[i][j]==0)
+		{
+		   born.push([i,j]);
+		}
+	}
+}
+for(var i =0;i<born.length;i++)
+{
+    alert(born[i]);
+}
+   
+</script>
+
+</body>
+
+
+</html>
