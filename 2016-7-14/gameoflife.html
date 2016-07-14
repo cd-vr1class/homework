@@ -1,0 +1,136 @@
+<html>
+<head>
+<script>
+
+
+
+function create_life_board(row,col)
+{
+    var arrs = [];
+    for(var j =0;j<row;j++){
+        var arr = [];
+        for(var i = 0;i<col;i++)
+        {
+            arr.push(0);
+        }
+        arrs.push(arr);
+    }
+    return arrs;
+}
+function print_board(board){
+    for(var i =0;i<board.length;i++)
+    {
+        document.write(board[i].toString()+"<br/>");
+    }
+}
+function add_points(board,points)
+{
+    for(var i =0;i<points.length;i++)
+    {
+        var a = points[i][0];
+        var b = points[i][1];
+        board[a][b] = 1;
+    }
+}
+function remove_points(board,points)
+{
+    for(var i =0;i<points.length;i++)
+    {
+        var a = points[i][0];
+        var b = points[i][1];
+        board[a][b] = 0;
+    }
+}
+
+function neighbours(x,y,board)     
+{
+    var count = 0;
+    for(var i=-1;i<=1;i++)
+    {
+        for(var j=-1;j<=1;j++)
+        {
+            if(!(i==0&&j==0))
+            {
+                if(!(x+i<0||x+i>=board.length))
+                {
+                    if(board[x+i][y+j])
+                        count++;
+                }
+            }
+        }
+    }
+    return count;
+}
+function borns(board)
+{
+    var born = [];
+    for(var i = 0;i<board.length;i++)
+    {
+        for(var j =0;j<board[i].length;j++)
+        {
+            if(neighbours(i,j,board)==3 && board[i][j]==0)
+            {
+                born.push([i,j]);
+            }
+        }
+    }
+    return born;
+}
+function lonely(board)
+{
+    var lones = [];
+    for(var i = 0;i<board.length;i++)
+    {
+        for(var j =0;j<board[i].length;j++)
+        {
+            if(neighbours(i,j,board)<=1 && board[i][j]==1)
+            {
+                lones.push([i,j]);
+            }
+        }
+    }
+    return lones;
+}
+function crowed(board)
+{
+    var crow = [];
+    for(var i = 0;i<board.length;i++)
+    {
+        for(var j =0;j<board[i].length;j++)
+        {
+            if(neighbours(i,j,board)>3 && board[i][j]==1)
+            {
+                crow.push([i,j]);
+            }
+        }
+    }
+    return crow;
+}
+function game_step(board){
+    var live = borns(board);
+    var die = lonely(board).concat(crowed(board)); 
+    add_points(board,live);
+    remove_points(board,die);
+    document.body.innerHTML = "";
+    
+    print_board(board);
+    document.write("<button onclick='game_step(board);'>下一轮</button>");
+}
+
+
+var board = create_life_board(8,8);
+var pos=[[2,0],[2,1],[2,2],[1,2],[0,1]];
+add_points(board,pos);
+print_board(board);
+
+
+</script>
+
+
+</head>
+<body>
+
+<button onclick='game_step(board);'>下一轮</button>
+</body>
+
+</html>
