@@ -1,0 +1,17 @@
+1
+["(","a","b","c","10","(","c","d",")",")"]
+["a","b","c",10,["c","d"]]
+
+某个字符串能不能转成数字
+Number("a")  NaN
+Number("10")  10
+Number("a") == NaN   错的
+Number("a") === NaN   错的
+!isNaN(Number(arr[0]))    正确的
+
+if(arr[1]=="(")
+
+if(arr[1]==")")
+不要求一定写出来
+
+2用while循环重写game of life
