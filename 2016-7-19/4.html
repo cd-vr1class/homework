@@ -1,0 +1,28 @@
+﻿<html>
+<head>
+<script>
+var N = prompt("fibnacci数列前几项的和？","2");
+N=parseInt(N);
+var a = 1;
+var b = 1;
+var s = 2;
+for(var i=0;i<N-2;i++)
+{
+    var c = a+b;
+    a=b;
+    b=c;
+    s+=c;
+}
+if(N<=0)
+    alert(0);
+else if(N==1)
+    alert(1)
+else
+    alert(s);
+
+
+</script>
+</head>
+<body>
+</body>
+</html>

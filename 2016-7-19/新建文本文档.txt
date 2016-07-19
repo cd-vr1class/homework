@@ -1,0 +1,13 @@
+课堂练习  
+1 找出数组中 偶数个个数
+[1,2,3,5,8,13,21,34]
+for in
+
+2 对象  
+var obj = {weight:180,height:180,age:25}
+找出属性名中有"gh" 字母的属性 
+把它的属性值改成0
+"archer".indexOf("ch") 2
+
+3   字符串 找出空格个数
+   "afads adfa  werew adsf"
