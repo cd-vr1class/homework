@@ -1,0 +1,17 @@
+<html>
+<head>
+<script>
+var t=1;
+var x=0;
+var N = 100000;
+for(var i=1;i<(2*N-1);i+=2)
+{
+    console.log(x);
+    x=x+t/i;
+    t=-t;
+}
+var pi=4*x;
+document.write(pi);
+</script>
+</head>	
+</html>

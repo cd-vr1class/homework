@@ -1,0 +1,28 @@
+<html>
+<head>
+<script>
+
+var i=prompt("请输入10个自然数,以逗号分开","i");
+var arr=i.split(',');//切割字符串
+
+var arr2 = [];
+for(var i in arr)
+{
+    var j = parseInt(arr[i]);
+    arr2.push(j);
+}
+console.log(arr2);// 在控制台打印
+
+var min = arr2[0];
+
+for(var i in arr2)
+{
+    if(arr2[i]<min)
+        min = arr2[i];
+}
+alert(min);
+alert(arr2.indexOf(min));//找出某个元素在数组中第一次出现的下标
+
+</script>
+</head>	
+</html>

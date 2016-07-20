@@ -1,0 +1,34 @@
+<html>
+<head>
+<script>
+
+var i=prompt("请输入n个自然数,以逗号分开","i");
+var arr=i.split(',');//切割字符串
+
+var arr2 = [];
+for(var i in arr)
+{
+    var j = parseInt(arr[i]);
+    arr2.push(j);
+}
+console.log(arr2);// 在控制台打印
+
+var max = arr2[0];
+var min = arr2[0];
+var s= 0;
+for(var i in arr2)
+{
+    if(arr2[i]>max)
+        max = arr2[i];
+    else if(arr2[i]<min)
+        min = arr2[i];
+        
+    s+=arr2[i];
+}
+alert(max);
+alert(min);
+alert(s/arr2.length);
+
+</script>
+</head>	
+</html>

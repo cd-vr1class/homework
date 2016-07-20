@@ -9,5 +9,5 @@ var obj = {weight:180,height:180,age:25}
 把它的属性值改成0
 "archer".indexOf("ch") 2
 
-3   字符串 找出空格个数
+3   字符串 找出空格个数   
    "afads adfa  werew adsf"
