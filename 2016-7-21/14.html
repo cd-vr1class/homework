@@ -1,0 +1,25 @@
+<html>
+<head>
+<script>
+//质数   ：除了1和本身之外的数都不能整除
+
+for(var i=2;i<1000;i++)
+{
+    if(lisi(i))
+        document.write(i+"<br/>");
+}
+function lisi(x)
+{
+    for(var j=2;j<x;j++)
+    {
+        if(x%j==0)
+            return false;
+    }
+    return true;
+}
+
+</script>
+</head>
+<body>
+</body>
+</html>

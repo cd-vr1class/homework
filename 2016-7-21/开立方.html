@@ -1,0 +1,33 @@
+<html>
+<head>
+<script>
+function isenough(y1,y2)
+{
+    return Math.abs(y1-y2)<0.000000001;
+}
+function next_y(x,y)
+{
+    return (x/(y*y)+2*y)/3;
+}
+function cubrt(x)
+{
+	var y=1;
+    
+    while(true)
+    {
+        var y1 = next_y(x,y);
+        if(isenough(y,y1))
+            break;
+        y=y1;
+    }
+    return y;
+}
+var x = prompt("输入一个数","");
+x=parseInt(x);
+alert(cubrt(x));
+
+</script>
+</head>
+<body>
+</body>
+</html>
