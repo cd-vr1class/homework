@@ -1,0 +1,35 @@
+用reduce 实现 一个数组 每个元素转换成它余3 的结果组成的数组
+
+例题：   数组 转成它的平方数组 
+var arr = [1,2,3]    
+  
+arr.reduce(function(x,y)
+           {
+                x.push(y*y);
+                return x;
+           }
+           ,[]);
+           
+//求一个数组中 所有元素的和
+//arr=[1,2,3,5,8];
+function sum(arr)
+{
+    return reduce(arr,0,function(x,y){return x+y;});
+}
+//求一个数组 所有元素的积
+// arr=[1,2,3,5,8];
+function fac(arr)
+{
+    return reduce(arr,1,function (x,y){return x*y;});
+}
+
+function reduce(arr,start,func)
+{
+    var s=start;
+    for(var i in arr)
+    {
+        s=func(s,arr[i]);
+    }
+    return s;
+}
+模仿上面代码，写 找出奇数和  找出偶数和
