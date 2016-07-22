@@ -3,8 +3,8 @@ java
 雷锋 雷峰塔
 
 js 在浏览器 在本地 对网页标签进行操作
-id        <a id="c"> </a>      c.click();
-class     <a class = "c"> </a>
+id        <xxx id="c"> </xxxx>      c.click();
+class     <xxx class = "c"> </xxx>
           document.getElementByClassName("c")[0].click()
 input     <input id="c"/>      c.value = "dsafdsf";
           .value用在输入框里面
@@ -17,7 +17,8 @@ html是顺序解析的，
 如果你在script里要用到某标签，
 那么你就必须把script放在该标签后面
 <script>  </script>
-
+千万不要用中文的符号
+单引号与双引号
 
 var div = document.createElement("div")
 ;
