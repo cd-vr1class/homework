@@ -1,0 +1,42 @@
+<html>
+<head>
+<script>
+
+function jishuhe(arr)
+{
+    return reduce(arr,0,function(x,y)
+                        {
+                            if(y%2==1)
+                                x+=y;
+                            return x;
+                        });
+}
+function oushuhe(arr)
+{
+    return reduce(arr,0,function(x,y)
+                        {
+                            if(y%2==0)
+                                x+=y;
+                            return x;
+                        });
+}
+
+
+function reduce(arr,start,func)
+{
+    var s=start;
+    for(var i in arr)
+    {
+        s=func(s,arr[i]);
+    }
+    return s;
+}
+</script>
+
+</head>
+<body>
+
+
+
+</body>
+</html>

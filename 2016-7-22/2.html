@@ -1,0 +1,32 @@
+<html>
+<head>
+<script>
+
+function jishuhe(arr)
+{
+    sumfilter(arr,function(x){return x%2==1});
+}
+function oushuhe(arr)
+{
+    sumfilter(arr,function(x){return x%2==0;});
+}
+function sumfilter(arr,func)
+{
+    var s = 0;
+    for(var i in arr)
+    {
+        if(func(arr[i]))
+            s+=arr[i];
+    }
+    return s;
+}
+
+</script>
+
+</head>
+<body>
+
+
+
+</body>
+</html>
