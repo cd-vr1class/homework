@@ -1,0 +1,85 @@
+﻿<html>
+<head>
+<script>
+var A = {color:"black",weight:15,varity:"中华田园犬"};
+var B = {color:"white",weight:20,varity:"牧羊犬"};
+var C = {color:"brown",weight:40,varity:"藏獒"};
+
+//构造函数
+function Dog(c,w,v)
+{
+    this.color = c;
+    this.weight = w;
+    this.varity = v;
+    this.bark = function()
+                {
+                    alert("wangwangwang");
+                }
+}
+var A = new Dog("black",15,"中华田园犬");
+var B = new Dog("white",20,"牧羊犬");
+var C = new Dog("brown",40,"藏獒");
+A.bark();
+
+function Rectangle(w,h)
+{
+    this.w=w;
+    this.h=h;
+    this.Area = function ()
+                {
+                    return this.w*this.h;
+                }
+}
+var a = new Rectangle(3,4);
+a.Area();
+//定义一个梯形对象   上底  下底 高   Area 
+
+
+//定义一个对象  hero     name  level hp mp
+function Hero(n,l,h,m)
+{
+    this.name = n;
+    this.level = l;
+    this.hp=h;
+    this.mp=m;
+    this.levelup=function()
+                 {
+                     this.level++;
+                 }
+    this.hurt=function (h)
+              {
+                  this.hp-=h;
+              }
+    this.kill = function (mon)
+                {
+                    mon.hurt(20);
+                }
+}
+//定义一个怪物    attack  defence hp name
+function Monster(a,d,h,n)
+{
+    this.attack = a;
+    this.defence = d;
+    this.hp = h;
+    this.name = n;
+    this.kill = function(hero)
+                {
+                    hero.hurt(this.attack);
+                }
+    this.hurt = function (h)
+                {
+                    this.hp-=h;
+                }
+}
+
+
+var zs = new Hero("张三",1,100,100);
+var mo = new Monster(50,20,1000,"roshan");
+mo.kill(zs);
+zs.kill(mo);
+ 
+</script>
+</head>
+<body>
+</body>
+</html>

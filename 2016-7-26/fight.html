@@ -1,0 +1,76 @@
+﻿<html>
+<head>
+<script>
+
+</script>
+</head>
+<body>
+
+<div id="h_name" style="float:left">
+
+</div>
+<div style="background:red;width:500px;height:50px;float:left">
+</div>
+<button onclick="zs.kill(mo);sync_monster(mo)">打怪</button>
+<br/>
+<br/>
+<br/>
+<br/>
+<div id="m_name" style="float:left">
+
+</div>
+<div id="mo_hp" style="background:red;width:500px;height:50px;float:left">
+</div>
+<button>砍人</button>
+<script>
+function Hero(n,l,h,m)
+{
+    this.name = n;
+    this.level = l;
+    this.hp=h;
+    this.mp=m;
+    this.levelup=function()
+                 {
+                     this.level++;
+                 }
+    this.hurt=function (h)
+              {
+                  this.hp-=h;
+              }
+    this.kill = function (mon)
+                {
+                    mon.hurt(20);
+                }
+}
+//定义一个怪物    attack  defence hp name
+function Monster(a,d,h,n)
+{
+    this.attack = a;
+    this.defence = d;
+    this.hp = h;
+    this.name = n;
+    this.kill = function(hero)
+                {
+                    hero.hurt(this.attack);
+                }
+    this.hurt = function (h)
+                {
+                    this.hp-=h;
+                }
+}
+
+var zs = new Hero("李四",1,100,100);
+var mo = new Monster(50,20,1000,"肉山");
+h_name.innerHTML = zs.name;
+m_name.innerHTML = mo.name;
+function sync_monster(mo)
+{
+    mo_hp.style.width = mo.hp/2+"px";
+}
+
+
+
+
+</script>
+</body>
+</html>
