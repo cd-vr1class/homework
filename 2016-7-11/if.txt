@@ -1,22 +1,40 @@
-var day=1;
-var weather="rain";
-if(day==1)
+var temp = 28;   // 室内温度
+var mode = "制冷";  // 空调模式
+if(temp>25)
 {
-    if(weather=="sun")
+    if(mode=="制冷")
     {
-        alert("run");
-    }else
-    {
-        alert("sleep");
+        alert("开始制冷");
     }
-}else
-{
-   
-    if(weather=="sun")
+    else
     {
-        alert("shop");
-    }else
-    {
-        alert("eat");
+        alert("闲置");
     }
 }
+else
+{
+   
+    if(mode=="制热")
+    {
+        alert("开始制热");
+    }
+    else
+    {
+        alert("闲置");
+    }
+}
+
+
+
+var a = 3;
+if (a==3) 
+{
+    alert("hahah");
+    alert("heiehi");
+}
+
+
+
+
+
+
