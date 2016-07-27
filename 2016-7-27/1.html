@@ -1,0 +1,37 @@
+﻿<html>
+<head>
+<script>
+function Hero(a,d,h)
+{
+    this.attack=a;
+    this.defence = d;
+    this.hp =h;
+    this.org_a = a;
+    this.org_d = d;
+    this.org_h = h;
+    this.equip = function(e)
+                 {
+                     this.attack= this.org_a + e.attack;
+                     this.defence=this.org_d +  e.defence;
+                     this.hp= this.org_h + e.hp;
+                 }
+}
+function Equip(a,d,h,n)
+{
+    this.attack=a;
+    this.defence = d;
+    this.hp =h;
+    this.name = n;
+}
+var h = new Hero(100,1,100);
+var ytj = new Equip(100,0,0,"倚天剑");
+var tld = new Equip(100,20,20,"屠龙刀");
+h.equip(ytj);
+console.log(h);
+h.equip(tld);
+console.log(h);
+</script>
+</head>
+<body>
+</body>
+</html>

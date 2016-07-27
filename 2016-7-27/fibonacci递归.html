@@ -1,0 +1,21 @@
+﻿<html>
+<head>
+<script>
+function f(n)
+{
+    return ff(1,1,n);
+}
+
+function ff(a,b,n)
+{
+    if(n==1)
+        return a;
+    return ff(b,a+b,n-1);
+}
+console.log(f(7));
+
+</script>
+</head>
+<body>
+</body>
+</html>

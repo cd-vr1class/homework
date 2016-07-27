@@ -1,0 +1,15 @@
+﻿<html>
+<head>
+<script>
+function print99(n,org)
+{
+    if(n==0)
+        return "";
+    return  print99(n-1,org) + " " + n + "*"+ org +"=" + (n*org);
+}
+document.write(print99(5,5));
+</script>
+</head>
+<body>
+</body>
+</html>
