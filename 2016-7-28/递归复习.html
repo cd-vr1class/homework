@@ -1,0 +1,36 @@
+﻿<html>
+<head>
+<script>
+var arr11 = ['(','a','b','c','(','d','e',')',')'];
+//['a','b','c',['d','e']]
+function parse(arr)
+{
+    var a = [];
+    if(arr[0]=='(')
+    {
+        var i=1;
+        while(i<arr.length)
+        {
+            if(arr[i]!='(' && arr[i]!=')')
+                a.push(arr[i]);
+            if(arr[i]=='(')
+            {
+                var b = [];
+                while(arr[i]!=')')
+                {
+                    b.push(arr[i++]);
+                }
+                b.push(arr[i]);
+                a.push(parse(b));
+            }
+            i++;
+        }
+    }
+    return a;
+}
+console.log(parse(arr11));
+</script>
+</head>
+<body>
+</body>
+</html>

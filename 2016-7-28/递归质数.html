@@ -1,0 +1,20 @@
+﻿<html>
+<head>
+<script>
+function f(x,n)
+{
+    if(x==n)
+        return true;
+    return n%x!=0 && f(x+1,n);
+}
+
+function isprime(n)
+{
+    return f(2,n)
+}
+
+</script>
+</head>
+<body>
+</body>
+</html>
