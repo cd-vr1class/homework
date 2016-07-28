@@ -1,0 +1,64 @@
+﻿<html>
+<head>
+<script>
+
+function tetris_cube()
+{
+    this.arr=[[0,0,0,0],
+              [1,1,1,0],
+              [0,0,1,0],
+              [0,0,0,0]];
+    this.transform = function()
+                     {
+                         var a=[];
+                         for(var j=0;j<4;j++)
+                         {
+                            var arr1 = [];
+                            for(var i=3;i>=0;i--)
+                            {
+                                arr1.push(this.arr[i][j]);
+                            }
+                            a.push(arr1);
+                         }
+                         this.arr = a;
+                     }
+    this.show=function ()
+    {
+        document.body.innerHTML = "";
+        document.write('<button style="position:absolute;left:500px" onclick="c.transform();c.show();">transform</button>');
+        for(var i in this.arr)
+        {
+            for(var j in this.arr[i])
+            {
+                var div = document.createElement("div");
+                div.style.border = "1px red solid";
+                div.style.width = "100px";
+                div.style.height = "100px";
+                div.style.position = "absolute";
+                div.style.top = i*100+"px";
+                div.style.left = j*100+"px";
+                if(this.arr[i][j]==1)
+                    div.style.background = "red";
+                document.body.appendChild(div);
+                
+            }
+        }
+    }
+    
+}
+var c;
+function load()
+{
+    c = new tetris_cube();
+    c.show();
+}
+window.onload = load;
+
+</script>
+</head>
+<body>
+
+
+<button style="position:absolute;left:500px" onclick="c.transform();c.show();">transform</button>
+</body>
+</html>

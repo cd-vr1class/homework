@@ -1,7 +1,15 @@
 ﻿<html>
 <head>
 <script>
+
 function f(n)
+{
+    if(n==0)
+        return [];
+    return f(n-1).concat([fib(n)]);
+}
+
+function fib(n)
 {
     return ff(1,1,n);
 }
@@ -12,8 +20,6 @@ function ff(a,b,n)
         return a;
     return ff(b,a+b,n-1);
 }
-console.log(f(7));
-
 </script>
 </head>
 <body>

@@ -7,7 +7,20 @@ function print99(n,org)
         return "";
     return  print99(n-1,org) + " " + n + "*"+ org +"=" + (n*org);
 }
-document.write(print99(5,5));
+for(var i=1;i<=9;i++)
+{
+    document.write(print99(i,i)+"<br/>");
+}
+
+//n = 9;
+function print999(n)
+{
+    if(n==0)
+        return "";
+    return print999(n-1) + "<br/>" + print99(n,n);
+}
+document.write(print999(9));
+
 </script>
 </head>
 <body>

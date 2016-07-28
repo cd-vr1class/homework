@@ -1,0 +1,33 @@
+﻿<html>
+<head>
+<script>
+
+//f(n) = f(next_n) 某种操作  *****
+function drink(wine,pg,ps)
+{
+    var haddrink = wine;
+    pg+=wine;
+    ps+=wine;
+    wine=0;
+    
+    wine+=parseInt(pg/4);
+    wine+=parseInt(ps/2);
+    pg%=4;
+    ps%=2;
+    if(wine==0)
+        return haddrink;
+    return haddrink + drink(wine,pg,ps);
+    
+}
+
+function moneytodrink(n)
+{
+    return drink(parseInt(n/5),0,0);
+}
+
+
+</script>
+</head>
+<body>
+</body>
+</html>
