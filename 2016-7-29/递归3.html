@@ -1,0 +1,23 @@
+﻿<html>
+<head>
+<script>
+
+function pow2(n)
+{
+    if(n==0)
+        return 1;
+    return 2 * pow2(n-1);
+}
+
+function allrice(n)
+{
+    if(n==1)
+        return 1;
+    return pow2(n-1)+allrice(n-1);
+}
+
+</script>
+</head>
+<body>
+</body>
+</html>

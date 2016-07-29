@@ -1,0 +1,19 @@
+﻿<html>
+<head>
+<script>
+function pi()
+{
+    return 4*longline(1000,1,1);
+}
+
+function longline(N,sign,now)
+{
+    if(now>N)
+        return 0;
+    return sign*(1/(2*now-1)) + longline(N,-sign,now+1);
+}
+</script>
+</head>
+<body>
+</body>
+</html>

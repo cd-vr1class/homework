@@ -1,0 +1,20 @@
+﻿<html>
+<head>
+<script>
+
+function addall(n)
+{
+    if(n==1)
+        return 1;
+    if(n%2==0)
+        return n + addall(n-1);
+    else
+        return addall(n-1);
+}
+addall(100);
+
+</script>
+</head>
+<body>
+</body>
+</html>

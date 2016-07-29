@@ -1,0 +1,37 @@
+﻿<html>
+<head>
+<script>
+var num = [1,2,3,5,8];
+var i = 0;
+function shownum()
+{
+    if(i>=num.length)
+        i=0;
+    txt.innerHTML = num[i++];
+}
+
+var task = setInterval(shownum,100);
+
+function stop()
+{
+    clearInterval(task);
+    st.style.display = 'none';
+    res.style.display = "";
+}
+
+function restart()
+{
+    task = setInterval(shownum,100);
+    res.style.display = "none";
+    st.style.display = "";
+}
+
+</script>
+</head>
+<body>
+<div id="txt"> </div>
+<button id="st" onclick="stop()">停止 </button>
+<button id="res" style="display:none" onclick="restart()">重启 </button>
+
+</body>
+</html>

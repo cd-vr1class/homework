@@ -1,0 +1,26 @@
+﻿<html>
+<head>
+<script>
+
+function factall(now,n)
+{
+    if(now==n)
+        return 0;
+    if(n%now==0)
+        return now + factall(now+1,n);
+    else 
+        return factall(now+1,n);
+}
+
+function fact(n)
+{
+    return factall(1,n);
+}
+
+
+
+</script>
+</head>
+<body>
+</body>
+</html>

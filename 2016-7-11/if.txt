@@ -1,40 +1,31 @@
-var temp = 28;   // 室内温度
-var mode = "制冷";  // 空调模式
-if(temp>25)
-{
-    if(mode=="制冷")
+﻿//形式参数 形参        28   "制热"
+function airCondition(temp,mode){
+    if(temp>25)
     {
-        alert("开始制冷");
+        if(mode=="制冷")
+        {
+            alert("开始制冷");
+        }
+        else
+        {
+            alert("闲置");
+        }
     }
     else
     {
-        alert("闲置");
-    }
-}
-else
-{
-   
-    if(mode=="制热")
-    {
-        alert("开始制热");
-    }
-    else
-    {
-        alert("闲置");
+       
+        if(mode=="制热")
+        {
+            alert("开始制热");
+        }
+        else
+        {
+            alert("闲置");
+        }
     }
 }
 
-
-
-var a = 3;
-if (a==3) 
-{
-    alert("hahah");
-    alert("heiehi");
-}
-
-
-
-
-
+airCondition(23,"制热");//实际参数 实参
+airCondition(21,"制冷");
+airCondition(28,"制热");
 
