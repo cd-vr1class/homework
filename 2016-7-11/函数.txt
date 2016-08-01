@@ -11,7 +11,7 @@ function pasca(a,b)
 }
 
 //0+1+2....100 
-//1*2*3....100
+//1*2*3....100    
 function add(n)
 {
     if(n==50)
@@ -22,10 +22,18 @@ add(100);
 
 function addstr(n)
 {
-    if(n==1)
-        return "1";
+    if(n==50)
+        return "50";
     return addstr(n-1)+n+",";
 }
+
+
+
+
+
+
+
+
 
 
 function addou(n)
@@ -37,6 +45,19 @@ function addou(n)
     else
         return addou(n-1);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 function factadd(m,n)
@@ -68,6 +89,14 @@ function pi(n,s)
 
 pi(10,1);
 pi(20,1);
+
+
+
+
+
+
+
+
 
 
 

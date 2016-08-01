@@ -1,0 +1,21 @@
+1  流程控制语句  for  while  switch  for...in  do..while  if
+
+2  理解函数    function xxx(参数...){ 函数体 }   xxx(参数...) 
+               高阶函数：用函数做参数 用函数做返回值
+               递归：在函数定义里，写了函数的调用。
+               ① 这段代码经常用到  用函数把它包起来
+               ② 解决大问题时，先用函数实现部分小功能，最后组装起来。
+
+3  对象和数组
+
+              数据  和数据的操作  
+              name = {数据,数据}  
+                     name:value
+              var  duck = {color:'black',weight:20};
+              构造函数         this
+              function Duck(color,weight)
+              {
+             	  this.color=color;
+		  this.weight=weight;
+              }  
+              var duck=new Duck('black',20);

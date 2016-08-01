@@ -1,0 +1,83 @@
+﻿<html>
+<head>
+<script>
+//var arr1 = [1,3,4]
+//var arr2 = [2,5,8]
+//myconcat(arr1,arr2)
+function myconcat(arr1,arr2)
+{
+    if(arr2.length==0)
+        return arr1;
+    arr1.push(arr2[0]);
+    arr2.splice(0,1);
+    return myconcat(arr1,arr2);
+}
+
+function fib(a,b,n)
+{
+    if(n==1)
+        return [a];
+    return fib(b,a+b,n-1).concat([a]);
+}
+fib(1,2,6);
+
+function numarr(n)
+{
+    if(n==0)
+        return [];
+    return numarr(n-1).concat([n]);
+}
+numarr(10);
+
+function numarr(n)
+{
+    if(n==0)
+        return [];
+    if(n%2==0)
+        return numarr(n-1).concat([n]);
+    else
+        return numarr(n-1);
+}
+
+function numarr(n)
+{
+    if(n==0)
+        return [];
+    if(n%3==0 || n%5==0)
+        return numarr(n-1).concat([n]);
+    else
+        return numarr(n-1);
+}
+numarr(10);
+
+
+//var arr = [1,2,3,5,8,13,21,34];
+function getnum(arr)
+{
+    if(arr.length==0)
+        return [];
+    var subarr = arr.slice(1,arr.length);
+    if(arr[0]%2==0)
+        return [arr[0]].concat(getnum(subarr));
+    else 
+        return getnum(subarr);
+}
+var arr = [1,2,3,5,8,13,21,34];
+getnum(arr);
+
+作业：
+判断一个数是不是2的n次方
+用递归的思想  
+   ① 先看这个数除2的结果是不是整数
+          是整数 
+              不为1  判断这个数除2是不是2的次方(使用递归)
+              是1    return true
+          不整数 return false
+
+ 注:   n == parseInt(n) 判断n是不整数
+
+</script>
+</head>
+<body>
+</body>
+</html>

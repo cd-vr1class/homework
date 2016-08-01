@@ -1,0 +1,39 @@
+﻿<html>
+<head>
+<script>
+//n=3
+function printn(n)
+{
+    var s = n+"";
+    for(var i=n-1;i>0;i--)
+    {
+        s =  i + " " + s + " " + i;
+    }
+    return s;
+}
+
+function printall(n)
+{
+    var s = "\n";
+    for(var i=1;i<=n;i++)
+    {
+        s+= printspace(2*(n-i))+printn(i)+"\n";
+    }
+    return s;
+}
+
+function printspace(n)
+{
+    var s = "";
+    for(var i=0;i<n;i++)
+    {
+        s+=" ";
+    }
+    return s;
+}
+
+</script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,42 @@
+﻿<html>
+<head>
+
+</head>
+<body>
+<div id="txt"> </div>
+<script>
+var names = ["田萌","张宏博","王佚名","张通","高克明","章雪松"];
+var i = 0;
+
+function getName()
+{
+    if(i>=names.length)
+    {
+        i=0;
+    }
+    
+    txt.innerHTML = names[i++];
+    
+}
+var t;
+function restart()
+{
+    t = setInterval(getName,100);
+}
+function stop()
+{
+    clearInterval(t);
+    names.splice(i-1,1);
+    if(names.length==0)
+    {
+        alert('没人啦');
+    }
+}
+
+</script>
+
+<button onclick="restart()"> 开始</button>
+<button onclick="stop()"> 停止</button>
+
+</body>
+</html>
