@@ -1,0 +1,39 @@
+﻿<html>
+<head>
+<script>
+function longsub(s)
+{
+    var arr = s.split('');
+    var t = arr[0];
+    var r = [];
+    for(var i=1;i<arr.length;i++)
+    {
+        if(t[t.length-1] == arr[i])
+            t+=arr[i];
+        else
+        {
+            r.push(t);
+            t=arr[i];
+        }
+    }
+    r.push(t);
+    return getmax(r);
+}
+
+function getmax(arr)
+{
+    var f = function (x,y)
+            {
+                if(y.length>x.length)
+                    x=y;
+                return x;
+            }
+            
+    return arr.reduce(f);
+    
+}
+</script>
+</head>
+<body>
+</body>
+</html>

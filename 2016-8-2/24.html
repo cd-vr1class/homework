@@ -1,0 +1,37 @@
+﻿<html>
+<head>
+<script>
+function isInt(n)
+{
+    return n==parseInt(n);
+}
+function isperfect(n)
+{
+    var m = Math.sqrt(n);
+    return isInt(m);
+}
+function iscircle(n)
+{
+    var s1 = n.toString();
+    var arr = s1.split("");
+    arr.reverse();
+    return s1 == arr.join("");
+}
+
+
+function getAllNums()
+{
+    for(var i=100;i<=999;i++)
+    {
+        if(iscircle(i)&&isperfect(i))
+            document.write(i+"<br/>");
+    }
+}
+getAllNums();
+
+
+</script>
+</head>
+<body>
+</body>
+</html>

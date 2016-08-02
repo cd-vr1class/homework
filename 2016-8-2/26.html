@@ -1,0 +1,38 @@
+﻿<html>
+<head>
+<script>
+function printn(n)
+{
+    var str = "abcdefghijklmnopqrstuvwxyz";
+    var s = str[n-1]+"";
+    for(var i=n-1;i>0;i--)
+    {
+        s =  str[i-1] + " " + s + " " + str[i-1];
+    }
+    return s;
+}
+
+function printall(n,m)
+{
+    if(n==0)
+        return;
+    document.write(printspace(m-n) + printn(n)+"<br/>");
+    printall(n-1,m);
+}
+function printspace(n)
+{
+    var s = "";
+    for(var i=0;i<n;i++)
+    {
+        s+="&nbsp;";
+    }
+    return s;
+}
+
+printall(3,3);
+
+</script>
+</head>
+<body>
+</body>
+</html>

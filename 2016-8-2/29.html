@@ -1,0 +1,39 @@
+﻿<html>
+<head>
+<script>
+function getNumArr(arr)
+{
+    return arr.map(Number);
+}
+
+function addnormalarr(arr1,arr2)
+{
+
+    return addarr(getNumArr(arr1),getNumArr(arr2));
+}
+
+function addarr(arr1,arr2)
+{
+    var min = arr1;
+    if(arr2.length<arr1.length)
+        min = arr2;
+    var dis = Math.abs(arr1.length-arr2.length);
+    for(var i =0;i<dis;i++)
+    {
+        min.push(0);
+    }
+    var arr = [];
+    for(var i in arr1)
+    {
+        arr.push(arr1[i]+arr2[i]);
+    }
+    return arr;
+}
+
+
+
+</script>
+</head>
+<body>
+</body>
+</html>
