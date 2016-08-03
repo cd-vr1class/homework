@@ -1,0 +1,48 @@
+﻿<html>
+<head>
+<script>
+//s1="1001" s2 = "110"
+function addBin(s1,s2)
+{
+    s1 = reverseStr(s1); //1 0 0 1
+    s2 = reverseStr(s2); //0 1 1 0
+    var min = s1;
+    if(s2.length<s1.length)
+        min = s2;
+    var d = Math.abs(s1.length-s2.length);
+    for(var i=0;i<d;i++)
+        min.push(0);
+    
+    var jin=0;
+    var arr = [];
+    for(var i in s1)
+    {
+        var addres =s1[i]+s2[i]+jin;
+        if(addres>=2)
+        {
+            jin = 1;
+            arr.push(addres-2);
+        }
+        else
+        {
+            arr.push(addres);
+        }    
+    }
+    if(jin!=0)
+        arr.push(jin);
+    arr.reverse();
+    return arr.join("");
+}
+
+function reverseStr(s)
+{
+    var arr = s.split("");
+    arr.reverse();
+    return arr.map(Number);
+}
+
+</script>
+</head>
+<body>
+</body>
+</html>
