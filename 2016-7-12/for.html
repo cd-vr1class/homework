@@ -65,6 +65,60 @@ for(var i=1;i<=8;i++)
     document.write("&nbsp;");
 }
 
+for(var i=1;i<=100;i++)
+{
+    if(i%2==1)
+        document.write(i);
+}
+//document.write(1+"<br/>");
+//document.write(3+"<br/>");
+//....
+//document.write(99+"<br/>");
+
+var arr = [];
+for(var i=1;i<100;i++)
+{
+    if(i%3==0)
+        arr.push(i);
+}
+从数组 [1,2,8,9,4,3,7] 找出 所有大于5的数并放到一个数组中
+
+
+var arr = [1,2,8,9,4,3,7];
+var na = [];
+for(var i=0;i<arr.length;i++)
+{
+    if(arr[i]>5)    
+        na.push(arr[i]);
+}
+
+var arr = [1,2,2,3,4,4];
+var b = [];
+for(var i=0;i<arr.length;i++){
+    if(b.indexOf(arr[i]) == -1)
+        b.push(arr[i]);
+}
+if(b.indexOf(arr[1]) == -1)
+    b.push(arr[1])
+if(b.indexOf(arr[2]) == -1)
+    b.push(arr[2])
+if(b.indexOf(arr[3]) == -1)
+    b.push(arr[3])
+if(b.indexOf(arr[4]) == -1)
+    b.push(arr[4])
+if(b.indexOf(arr[5]) == -1)
+    b.push(arr[5])
+    
+
+
+
+
+1 [1,2,4,8,4,1]
+  [1,4,16,64,16,1]
+
+2 找出一个数组中最小的元素  
+
+
 </script>
 </head>
 
