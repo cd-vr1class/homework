@@ -1,0 +1,22 @@
+﻿<html>
+<head>
+<script>
+function hello(e)
+{
+    var n = e.keyCode;
+    if(n==37)
+        xx.innerHTML = "左";
+    if(n==38)
+        xx.innerHTML = "上";
+    if(n==39)
+        xx.innerHTML = "右";
+    if(n==40)
+        xx.innerHTML = "下";
+}
+document.onkeydown = hello;
+</script>
+</head>
+<body>
+<div id="xx" > </div>
+</body>
+</html>
