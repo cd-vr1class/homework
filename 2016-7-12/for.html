@@ -98,27 +98,150 @@ for(var i=0;i<arr.length;i++){
     if(b.indexOf(arr[i]) == -1)
         b.push(arr[i]);
 }
-if(b.indexOf(arr[1]) == -1)
-    b.push(arr[1])
-if(b.indexOf(arr[2]) == -1)
-    b.push(arr[2])
-if(b.indexOf(arr[3]) == -1)
-    b.push(arr[3])
-if(b.indexOf(arr[4]) == -1)
-    b.push(arr[4])
-if(b.indexOf(arr[5]) == -1)
-    b.push(arr[5])
     
 
 
 
 
-1 [1,2,4,8,4,1]
-  [1,4,16,64,16,1]
+
+// squareArr(arr)  [1,4,16,64,16,1]
+function squareArr(arr)
+{
+    var narr = [];
+    for(var i=0;i<arr.length;i++)
+    {
+        narr.push(arr[i]*arr[i]);
+    }
+    return narr;
+}
+squareArr([1,2,4,8,4,1]);
 
 2 找出一个数组中最小的元素  
+function getmin(arr)
+{
+    var min = arr[0];
+    for(var i=1;i<arr.length;i++)
+    {
+        if(arr[i]<min)
+            min = arr[i];
+    }
+    return min;
+}
+
+写一个函数  getmax  能得到数组中的最大值
+function getmax(arr)
+{
+    var max = arr[0];
+    for(var i=1;i<arr.length;i++)
+    {
+        if(arr[i]>max)
+            max = arr[i];
+    }
+    return max;
+}
+
+function print9(n)
+{
+    var i = 1;
+    while(i<=n)
+    {
+        document.write(i);
+        document.write('*');
+        document.write(n);
+        document.write('=');
+        document.write(i*n);
+        document.write('&nbsp;');
+        i++;
+    }
+    document.write('<br/>');
+}
+function print99()
+{
+    var i=1;
+    while(i<=9)
+    {
+        print9(i);
+        i++;
+    }
+}
+print99();
 
 
+function printstar(n)
+{
+    for(var i=0;i<2*n-1;i++)
+    {
+        document.write('烫');
+    }
+    document.write('<br/>');
+}
+
+function printall(n)
+{
+    for(var i=1;i<=n;i++)
+    {
+        printspace(n-i);
+        printstar(i);
+    }
+    for(var i=n-1;i>0;i--)
+    {   
+        printspace(n-i);
+        printstar(i);
+    }
+}
+function printspace(n)
+{
+    for(var i=0;i<n;i++)
+    {
+        document.write('&nbsp;');
+    }
+}
+
+
+
+var arr = [1,2,3,4];
+for(var i in arr)
+{
+    document.write(arr[i]);
+}
+
+var arr = [1,4,6,8];
+for(var i =0;i<arr.length;i++)
+{
+    if(arr[i]%2==0)
+    {
+        arr.splice(i,1);
+    }
+}
+
+function isprime(n)
+{
+    if(n<=1)
+        return false;
+    for(var i=2;i<=Math.sqrt(n);i++)
+    {
+        if(n%i==0)
+            return false;
+    }
+    return true;
+}
+
+function printPrime(arr)
+{
+
+}
+printPrime([1,2,3,5,8,13,21,34])       2 3 5 8 13 
+
+function getTaskCount(task,day)
+{
+//声明3个变量   然后遍历task数组
+//today 0        小于等于day   ++
+//comming 0      day+1   day+7 之间   ++
+//later  0        大于 day+7    ++
+
+//return [today,comming,later]
+}
+getTaskCount([1,2,3,5,8,13,21],8)   == [5,1,1]
 </script>
 </head>
 

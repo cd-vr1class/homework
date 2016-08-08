@@ -1,0 +1,97 @@
+﻿<html>
+<head>
+<script>
+function fiveGame(n)
+{
+    this.init_map=function (n)
+    {
+        var arr = [];
+        for(var i =0;i<n;i++)
+        {
+            var a = [];
+            for(var j =0;j<n;j++)
+            {
+                a.push(0);
+            }
+            arr.push(a);
+        }
+        return arr;
+    }
+    this.arr = this.init_map(n);
+    this.divs = [];   
+    this.now = 1;
+    this.showHTML= function ()
+    {
+        if(this.divs.length == 0)
+            this.initHTML();
+        else
+        {
+            for(var i in this.arr)
+            {
+                for(var j in this.arr[i])
+                {
+                    this.f(i,j,this.divs[i][j]);
+                }
+            }
+        }
+    }
+    this.f = function (i,j,div)
+    {
+        if(this.arr[i][j]==0)
+            div.style.background = "url(null.png)";
+        else if(this.arr[i][j]==1)
+            div.style.background = "url(white.png)";
+        else 
+            div.style.background = "url(black.png)";
+    }
+    this.initHTML=function ()
+    {
+        for(var i in this.arr)
+        {
+            var d = [];
+            for(var j in this.arr[i])
+            {
+                var div = document.createElement("div");
+                div.style.width = "50px";
+                div.style.height = "50px";
+                this.f(i,j,div);
+                div.style.position = "absolute";
+                div.style.left = j*50+"px";
+                div.style.top = i*50+"px";
+                div.id = i+","+j;
+                div.onclick = function(e)
+                {
+                    var d = e.srcElement;
+                    var arr = d.id.split(',');
+                    arr = arr.map(Number);
+                    fg.click(arr[0],arr[1]);
+                }
+                document.body.appendChild(div);
+                d.push(div);
+            }
+            this.divs.push(d);
+        }
+    }
+    this.click = function (x,y)
+    {
+        if(this.arr[x][y]!=0)
+            return;
+        this.arr[x][y]=this.now;
+        this.showHTML();
+        if(this.now==1)
+            this.now=2;
+        else
+            this.now=1;
+    }
+    this.cCount = function (x,y)
+    {
+    
+    }
+}
+var fg = new fiveGame(8);
+</script>
+</head>
+<body onload= "fg.showHTML()">
+
+</body>
+</html>

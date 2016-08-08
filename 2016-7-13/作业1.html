@@ -1,0 +1,30 @@
+﻿<html>
+<head>
+<script>
+//1 把一堆数中的质数打印出来
+function isPrime(n)
+{
+    if(n<=1)
+        return false;
+    for(var i=2;i<=Math.sqrt(n);i++)
+    {
+        if(n%i==0)
+            return false;
+    }
+    return true;
+}
+
+function printPrime(arr)
+{
+    for(var i in arr)
+    {
+        if(isPrime(arr[i]))
+            document.write(arr[i]+"<br/>");
+    }
+}
+printPrime([1,2,3,5,8,13,21,34]);
+</script>
+</head>
+<body>
+</body>
+</html>

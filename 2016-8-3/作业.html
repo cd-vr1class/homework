@@ -8,8 +8,31 @@ function move(e)
     if(e.keyCode==40)
     {
         h+=100;
+        if(h>=800)
+            h=0;
         xx.style.top = h+"px";
-    }    
+    }
+    if(e.keyCode==37)
+    {
+        w-=100;
+        if(w<0)
+            w=700;
+        xx.style.left = w+"px";
+    }
+    if(e.keyCode==38)
+    {
+        h-=100;
+        if(h<0)
+            h=700;
+        xx.style.top = h+"px";
+    }
+    if(e.keyCode==39)
+    {
+        w+=100;
+        if(w>=800)
+            w=0;
+        xx.style.left = w+"px";
+    }
         
 }
 

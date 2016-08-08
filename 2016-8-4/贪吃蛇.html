@@ -5,11 +5,12 @@
 function Snake()
 {
     this.arr = [[0,0,0,0],
-                [0,0,1,0],   
+                [0,2,1,0],   
                 [0,0,1,0],
                 [0,0,0,0]];
     this.dir = -2;    // -1 左 1 右  -2 上 2 下
     this.points = [[1,2],[2,2]];
+    this.food = [1,1];
     this.show = function ()
                 {
                     for(var i in this.arr)
@@ -25,6 +26,9 @@ function Snake()
                         var y = this.points[i][1];
                         this.arr[x][y] = 1;
                     }
+                    var x = this.food[0];
+                    var y = this.food[1];
+                    this.arr[x][y]=2;
                     return this.arr;
                 }
                 
@@ -39,16 +43,22 @@ function Snake()
             {
                 for(var j in this.arr[i])
                 {
-                    if(this.arr[i][j]==0)
-                        this.divs[i][j].style.background = "gray";
-                    else
-                        this.divs[i][j].style.background = "black";
+                    this.f(i,j,this.divs[i][j]);
                 }
             }
         }
         
         
         
+    }
+    this.f = function (i,j,div)
+    {
+        if(this.arr[i][j]==0)
+            div.style.background = "gray";
+        else if(this.arr[i][j]==1)
+            div.style.background = "black";
+        else 
+            div.style.background = "red";
     }
     this.initHTML=function ()
     {
@@ -60,10 +70,7 @@ function Snake()
                 var div = document.createElement("div");
                 div.style.width = "100px";
                 div.style.height = "100px";
-                if(this.arr[i][j]==0)
-                    div.style.background = "gray";
-                else
-                    div.style.background = "black";
+                this.f(i,j,div);
                 div.style.position = "absolute";
                 div.style.left = j*100+"px";
                 div.style.top = i*100+"px";
@@ -79,10 +86,28 @@ function Snake()
                          var dir = -1;// -1 左
                          if(dir+this.dir==0)
                              return;
-                         this.points.pop();
+                         
                          var head = this.points[0];
-                         var next = [head[0],head[1]-1];
+                         var x = head[0];
+                         var y = head[1]-1;
+                         if(y<0)
+                            y = this.arr[x].length-1;
+                         var next = [x,y];
                          this.points.unshift(next);
+                         if(this.arr[x][y]!=2)
+                            this.points.pop();
+                         else   
+                         {
+                            while(true)
+                            {
+                                var x =parseInt(Math.random()*this.arr.length);
+                                var y =parseInt(Math.random()*this.arr[0].length);
+                                if(this.arr[x][y]==1||this.arr[x][y]==2)
+                                    continue;
+                                this.food = [x,y];
+                                break;  
+                            }
+                         }
                          this.dir = dir;
                          this.show();
                      }

@@ -1,0 +1,90 @@
+﻿<html>
+<head>
+<script>
+//arr [1,1,2,3,5,8,13,21,34]
+//day 7     8 14
+//[5,2,2]
+function GetDayCount(arr,day)
+{
+    var today = 0;
+    var comming = 0;
+    var later = 0;
+    for(var i in arr)
+    {
+        if(arr[i]<=day)
+            today++;
+        if(arr[i]>=day+1 && arr[i]<=day+7)
+            comming++;
+        if(arr[i]>day+7)
+            later++;
+    }
+    return [today,comming,later];
+}
+GetDayCount([1,1,2,3,5,8,13,21,34],7);
+
+
+
+
+function stu(n)
+{
+
+}
+stu(75) == "中"  //60-79
+stu(90) == "优"  //90-100
+stu(85) == "良"  //80-89
+stu(58) == "差"  //0-60
+//递归复习
+function sum(n)
+{
+    if(n==0)
+        return 0;
+    return n+sum(n-1);
+}
+//sum(10) == 55
+//sum(100) == 5050 
+
+//1 1 2 3 5 8 13  fibonacci
+function fib(n)
+{
+    return fib_iter(1,1,n);
+}
+function fib_iter(a,b,n)
+{
+    if(n==1)
+        return a;
+    return fib_iter(b,a+b,n-1);
+}
+
+//fib(3)  == 2
+//fib(6)  == 8
+
+function printstar(n)
+{
+    for(var i=0;i<n;i++)
+    {
+        for(var j=0;j<=i;j++)
+        {
+            document.write('*');
+        }
+        document.write('<br/>');
+    }
+}
+printstar(4)
+printstar(3)
+printstar(5)  
+
+for(var i =2;i<100;i+=3)
+{
+    if(i%11==1)
+        continue;
+    if(i%13==0)
+        break;
+    document.write(i+"<br/>");
+}
+       
+
+</script>
+</head>
+<body>
+</body>
+</html>
