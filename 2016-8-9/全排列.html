@@ -1,0 +1,51 @@
+﻿<html>
+<head>
+<script>
+function allshow(n)
+{
+    if(n==1)
+        return [[1]];
+    var arr = [];
+    var all = allshow(n-1);
+    for(var i in all)
+    {
+        var maybe = all[i];
+        for(var j =0;j<=maybe.length;j++)
+        {
+            var a = maybe.slice(0,j).concat([n]).concat(maybe.slice(j));
+            arr.push(a);
+        }
+    }
+    return arr;
+}
+function combine(n,m)
+{
+    return combineNum(1,n,m);
+}
+
+function combineNum(x,n,m)
+{
+    var arr = [];
+    if(m==1)
+    {
+        for(var i=x;i<=n;i++)
+        {
+            arr.push([i]);
+        }
+        return arr;
+    }
+    // n 7 m 3
+    for(var j = x;j<=n-m+1;j++)
+    {
+        //console.log(j);
+        var all = combineNum(j+1,n,m-1);
+        var a = all.map(function(x){return [j].concat(x)});
+        arr = arr.concat(a);
+    }
+    return arr; 
+}
+</script>
+</head>
+<body>
+</body>
+</html>

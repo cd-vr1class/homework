@@ -78,14 +78,48 @@ function fiveGame(n)
             return;
         this.arr[x][y]=this.now;
         this.showHTML();
+        if(this.cCount(x,y)>=4)
+            this.gameover();
+        
         if(this.now==1)
             this.now=2;
         else
             this.now=1;
     }
+    this.gameover= function()
+    {
+        //三目运算符
+        var name = this.now==1?"白方":"黑方";
+        alert("恭喜"+name+"获得了胜利!");
+        this.arr=this.init_map(n);
+        this.showHTML();
+    }
     this.cCount = function (x,y)
     {
-    
+        var color = this.arr[x][y];
+        if(color==0)
+            return 0;
+        var fx = x-1;
+        var count=0;
+        while(fx>=0)
+        {
+            if(this.arr[fx][y]!=color)
+                break;
+            else
+                count++;
+            fx--;
+        }
+        var fx= x+1;
+        while(fx<this.arr.length)
+        {
+            
+            if(this.arr[fx][y]!=color)
+                break;
+            else
+                count++;
+            fx++;
+        }
+        return count;
     }
 }
 var fg = new fiveGame(8);
