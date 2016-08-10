@@ -1,0 +1,50 @@
+﻿<html>
+<head>
+<script>
+function gcd(a,b)
+{
+    if(b==0)
+        return a;
+    return gcd(b,a%b);
+}
+function gcd(a,b)
+{
+    while(b!=0)
+    {
+        var c = a%b;
+        a=b;
+        b=c;
+    }
+    return a;
+}
+var arr = [3,4,5,3,4,5,3,4,5] ;
+arr.map(function(x)
+        {
+            return x%2==0?2:0;
+        });
+                // a 12
+                // b [3 4 5 3 4 5 3 4 5] 
+                // c 10    
+function getNthTerm(a,b,c)
+{
+    var rep = parseInt(c/b.length)+1;
+    var arr = repeatArr(b,rep).slice(0,c);
+    return arr.reduce(function(x,y){return x+y;},a);
+}
+function repeatArr(arr,n)
+{
+    var narr = [];
+    for(var i=0;i<n;i++)
+    {
+        narr = narr.concat(arr);
+    }
+    return narr;
+}
+getNthTerm(12,[3,4,5],10)
+
+
+</script>
+</head>
+<body>
+</body>
+</html>
