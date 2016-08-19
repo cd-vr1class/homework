@@ -1,0 +1,40 @@
+﻿<html>
+<head>
+<script>
+//两个排好序的数组 合并成一个新的数组
+function merge(arr1,arr2)
+{
+    var arr = [];
+    do 
+    {
+        var h1=arr1[0];
+        var h2=arr2[0];
+        if(h1==undefined)
+        {
+            arr=arr.concat(arr2);
+            arr2=[];
+            break;
+        }
+        if(h2==undefined)
+        {
+            arr = arr.concat(arr1);
+            arr1=[];
+            break;
+        }
+        if(h1<h2)
+        {
+            arr.push(h1);
+            arr1.splice(0,1);
+        }else 
+        {
+            arr.push(h2);
+            arr2.splice(0,1);
+        }
+    }while(!(h1==undefined && h2==undefined));
+    return arr;
+}
+</script>
+</head>
+<body>
+</body>
+</html>

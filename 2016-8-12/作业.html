@@ -1,0 +1,48 @@
+﻿<html>
+<head>
+<script>
+//arr1 [1,2,3,4,5,0] 
+//arr2 [0,1,2,3,4,5] 
+function isequal(arr1,arr2)
+{
+    if(arr1.length!=arr2.length)
+        return false;
+    for(var i in arr1)
+    {
+        if(arr1[i]!=arr2[i])
+            return false;
+    }
+    return true;
+}
+//a ["aba","zxy","aba","zz"] 
+//b ["aba","zxy","bb"]
+// return  [2,1,0]
+function occupyarr(a,b)
+{
+    var c = [];
+    for(var i in b)
+    {
+        c.push(occupy(a,b[i]));
+    }
+    return c;
+}
+// a ["aba","zxy","aba","zz"] 
+// b "aba"
+// return 2
+function occupy(a,b)
+{
+    var count = 0;
+    for(var i in a)
+    {
+        if(b== a[i])
+            count++;
+    }
+    return count;
+} 
+
+
+</script>
+</head>
+<body>
+</body>
+</html>

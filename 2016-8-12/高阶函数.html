@@ -1,0 +1,33 @@
+﻿<html>
+<head>
+<script>
+
+function facall(arr,start,func)
+{
+    var s  =start;
+    for(var i in arr)
+    {
+        s=func(s,arr[i]);
+    }
+    return s;
+}
+facall([1,2,3,4],10,function (x,y){return x*y;});
+facall([1,2,3,5],[],function (x,y){x.push(y*y);return x;});
+
+function addnum(n)
+{
+    var f = function (m)
+    {
+       return m+n;
+    }
+    return f;
+}
+addnum(5);
+
+
+
+</script>
+</head>
+<body>
+</body>
+</html>

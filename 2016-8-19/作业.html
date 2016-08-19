@@ -1,0 +1,34 @@
+﻿<html>
+<head>
+<script>
+function make(n)
+{
+    return function (m)
+    {
+        //n=3;
+        //m=[1,2,3]
+        ?????????
+    }
+}  
+var f = make(3);
+f([1,2,3]);//[3,6,9]
+
+var f = make(5);
+f([2,4,8]); // [10,20,40]
+
+////////////参考//////////
+function maxthan(n)
+{
+    return function (m)
+    {
+        return m.filter(function(x){return x>n;});
+    }
+}
+//测试：
+var f = maxthan(5);
+f([1,2,3,5,8,13]);//[8,13]
+</script>
+</head>
+<body>
+</body>
+</html>

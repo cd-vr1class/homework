@@ -1,0 +1,33 @@
+﻿<html>
+<head>
+<script>
+//判断某元素在数组中出现多少次
+//arr [1,1,2,3]
+//n   1
+
+
+function times(arr,n)
+{
+    var f = function(x,y)
+    {
+        if(y==n)
+            x++;
+        return x;
+    }
+    return arr.reduce(f,0);
+}
+times([1,1,2,3],1);//2
+times([1,1,2,3],4);//0
+times([1,1,2,3],3);//1
+
+//找出数组中大于50的元素  组成新数组
+//写三种 写法  1 for  2 filter  3 reduce
+function  findmore50(arr)
+{
+    ???????
+}
+</script>
+</head>
+<body>
+</body>
+</html>

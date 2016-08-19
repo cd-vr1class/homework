@@ -1,0 +1,32 @@
+﻿<html>
+<head>
+<script>
+
+function Queue()
+{
+    this.arr = [];
+    this.enqueue = function(x)
+    {
+        this.arr.push(x);
+    }
+    this.dequeue = function()
+    {
+        return this.arr.splice(0,1)[0];
+    }
+    this.peek = function ()
+    {
+        return this.arr[0];
+    }
+}
+var q = new Queue();
+q.enqueue("找张三");
+q.enqueue("打3只大野猪");
+q.enqueue("找张三完成任务");
+q.dequeue(); //8
+q.dequeue(); //2
+q.dequeue(); //3
+</script>
+</head>
+<body>
+</body>
+</html>

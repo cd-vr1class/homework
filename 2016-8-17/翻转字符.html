@@ -1,0 +1,24 @@
+﻿<html>
+<head>
+<script>
+var s = "abcd\nefgh\nijkl\nmnop";
+function transpose(s)
+{
+    var sarr = s.split("\n"); //["abcd","efgh","ijkl","mnop"]
+    var narr = [];
+    for(var i=0;i<4;i++)
+    {
+        var s = "";
+        for(var j=3;j>=0;j--)
+        {
+            s+=sarr[j][i];
+        }
+        narr.push(s);
+    }
+    return narr.join("\n");  
+}
+</script>
+</head>
+<body>
+</body>
+</html>

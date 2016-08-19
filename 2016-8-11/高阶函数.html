@@ -1,0 +1,87 @@
+﻿<html>
+<head>
+<script>
+function isModZ(n)
+{
+    var f = function (x)
+    {
+        return x%n==0;
+    }
+    return f;
+}
+1  ["aba","abc","czy"]  找出含有 a字母的字符串 ["aba","abc"]
+2  ["aba","abc","czy"]  找出含有 c字母的字符串 
+3  ["aba","abc","czy"]  找出含有 y字母的字符串
+getfive([1,2,3,5,8,13,21,34],isModZ(3));
+function getfive(arr,func)
+{    
+    var na = [];
+    for(var i in arr)
+    {
+        if(func(arr[i]))
+            na.push(arr[i]);
+    }
+    return na;
+}   
+
+//[1,2,3,5]
+//['奇','偶','奇','奇']
+//[1,4,9,25]
+mapsquar([1,2,3,5],ikkk);
+function mapsquar(arr,func)
+{
+    var na = [];
+    for(var i in arr)
+    {           
+        na.push(func(arr[i]));
+    }
+    return na;
+}
+function ikkk(x)
+{
+    return x%3*10+x;
+}
+
+
+
+
+
+//作业 ：高阶函数改造
+//arr [1,1,2,3,5]  
+//start 1
+//return  13
+function addall(arr,start)
+{  
+    var s = start;
+    for(var i in arr)
+    {
+        s=s+arr[i];
+    }
+    return s;
+}
+
+function facall(arr,start)
+{
+    var s = start;
+    for(var i in arr)
+    {
+        s=s*arr[i];
+    }
+    return s;
+}
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</head>
+<body>
+</body>
+</html>

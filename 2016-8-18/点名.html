@@ -1,0 +1,24 @@
+﻿<html>
+<head>
+<script>
+function CheckName(names)
+{
+    var index = 0;
+    var next = function ()
+    {
+        txt.innerHTML = names[index];
+        index = (index+1)%names.length;
+    }
+    return next;
+}
+var getname = CheckName(['张三','李四','王五']);
+//计时器      每隔多少秒  干什么事情
+var tsk = setInterval(getname,1000);
+</script>
+</head>
+<body>
+<button onclick="tsk = setInterval(getname,1000);"> 点名 </button>
+<button onclick="clearInterval(tsk);"> 停下来 </button>
+<div id="txt"></div>
+</body>
+</html>

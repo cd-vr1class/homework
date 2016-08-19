@@ -1,0 +1,42 @@
+﻿<html>
+<head>
+<script>
+function sidezero(map,x,y)
+{
+    var arr = [-1,0,1];
+    for(var i=0;i<arr.length;i++)
+    {
+        for(var j=0;j<arr.length;j++)
+        {
+            if(!(arr[i]==0&&arr[j]==0))
+            {
+                var nx = x+arr[i];
+                var ny = y+arr[j];
+                if(!(map[nx]==undefined || map[nx][ny]==undefined))
+                    map[nx][ny]=0;
+            }
+        }
+    }
+}
+sidezero([[1,1,1],
+          [1,1,1],
+          [1,1,1]],1,2);
+    var arr = [1,2,3,5,8];
+    var i = 0;
+    var max=arr[i];
+    do
+    {
+        if(max<arr[i])
+            max = arr[i];
+        i++;
+    }while(i<arr.length);
+    
+    function 名字([参数])
+    {
+        
+    }
+</script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,70 @@
+﻿<html>
+<head>
+<script>
+function Queue()
+{
+    this.arr = [];
+    this.enqueue = function(x)
+    {
+        this.arr.push(x);
+    }
+    this.dequeue = function()
+    {
+        return this.arr.splice(0,1)[0];
+    }
+    this.peek = function ()
+    {
+        return this.arr[0];
+    }
+    this.count = function (){return this.arr.length;}
+}
+function Stack()
+{
+    this.data = new Queue();
+    this.temp = new Queue();//临时队列
+    this.push = function(x)
+    {
+        this.data.enqueue(x);
+    }
+    this.pop = function()
+    {
+        while(this.data.count()>1)
+        {
+            this.temp.enqueue(this.data.dequeue());
+        }
+        var x = this.data.dequeue();
+        while(this.temp.count()>0)
+        {
+            this.data.enqueue(this.temp.dequeue());
+        }
+        return x;
+    }
+    this.peek =function ()
+    {
+        while(this.data.count()>1)
+        {
+            this.temp.enqueue(this.data.dequeue());
+        }
+        var x = this.data.peek();
+        this.temp.enqueue(this.data.dequeue());
+        while(this.temp.count()>0)
+        {
+            this.data.enqueue(this.temp.dequeue());
+        }
+        return x;  
+    }
+}
+
+
+
+
+
+
+
+
+
+</script>
+</head>
+<body>
+</body>
+</html>

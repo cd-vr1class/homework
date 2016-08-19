@@ -1,0 +1,29 @@
+﻿<html>
+<head>
+<script>
+function longestSub(str)
+{
+    var s = str[0];
+    var ns = "";
+    for(var i=1;i<str.length;i++)
+    {
+        if(str[i]==s[0])
+        {
+            s+=str[i];
+        }
+        else
+        {
+            ns = (ns.length>=s.length?ns:s);
+            s=str[i];
+        }
+    }
+    ns = ns.length>=s.length?ns:s;
+    return ns;
+}
+
+
+</script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,23 @@
+﻿<html>
+<head>
+<script>
+//[1,2,3,4]
+//[["1","2 3 4"],["1 2","3 4"],["1 2 3","4"]]
+function getsplit(arr)
+{
+    var res = [];
+    for(var i = 1;i<arr.length;i++)
+    {
+        var str1 = arr.slice(0,i).join(" ");
+        var str2 = arr.slice(i).join(" ");
+        var temp = [str1,str2];
+        res.push(temp);
+    }
+    return res;
+}
+
+</script>
+</head>
+<body>
+</body>
+</html>
