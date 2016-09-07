@@ -1,0 +1,57 @@
+﻿<html>
+<head>
+<script>
+
+    for(var i=7;i<=100;i+=4)
+    {
+        if(i%13==0)
+            continue;
+        if(i%17==0)
+            break;
+        console.log(i);
+    }
+    
+    //判断一个数是不是回文数
+    // 121    12321
+    // "abc"  "cba"       'c'+'b'+'a'       
+    function isC(n)
+    {
+        //把n转换成字符串 a             7+'' == '7'
+        var a = n+"";
+        //创造一个空字符串 b
+        var b = '';
+        //遍历字符串a里面的元素
+        for(var i =0;i<a.length;i++)
+        {
+            b = a[i] + b;
+        //    b的值变成 遍历的元素与b相加的结果
+        }
+        return a==b;
+        //循环结束后 return a==b;
+    }
+    
+    //1 、100-999  回文个数
+    function countC()
+    {
+    }
+    //2   判断一个数是不是完全平方数    
+    function isPerfect(n)
+    {
+    
+    }
+    
+    
+    function isC(n)
+    {
+        var a = n+"";
+        var b = n.split('').reverse().join('');
+        return a == b;
+    }
+    
+
+
+</script>
+</head>
+<body>
+</body>
+</html>

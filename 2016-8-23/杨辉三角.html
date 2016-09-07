@@ -1,0 +1,42 @@
+﻿<html>
+<head>
+<script>
+function pascaTriangle(n)
+{
+    var s = [1];
+    for(var i=1;i<n;i++)
+    {
+        s = addArrEle([0].concat(s),s.concat([0]));
+    }
+    return s;
+}
+
+function addArrEle(a1,a2)
+{
+    var s = [];
+    for(var i = 0;i<a1.length;i++)
+    {
+        s.push(a1[i]+a2[i]);
+    }
+    return s;
+}
+function addElem(a1,a2)
+{
+    var a = [];
+    for(var i=0;i<a1.length;i++)
+    {
+        if(i%2==0)
+            a.push(a1[i]+a2[i+1]);
+        else
+            a.push(a1[i]+a2[i-1]);
+    }
+    return a; 
+}
+
+
+
+</script>
+</head>
+<body>
+</body>
+</html>

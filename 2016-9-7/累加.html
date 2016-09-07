@@ -1,0 +1,24 @@
+﻿<html>
+<head>
+<script>
+function  SequenceSum(num)
+{
+    if(num<0)
+        return num+"<0";
+    var s = "";
+    var c = 0;
+    for(var i=0;i<=num;i++)
+    {
+        s+=i+"+";
+        c+=i;
+    }
+    s = s.slice(0,s.length-1);
+    return s + ' = ' + c;
+}
+
+
+</script>
+</head>
+<body>
+</body>
+</html>

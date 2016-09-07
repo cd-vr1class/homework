@@ -55,21 +55,25 @@ var arr = [[1,2,3],
            [4,4,4,4]];
     arr[3][3] arr[2][2] arr[1][1] arr[0][0]
     arr[0][3] arr[1][2] arr[2][1] arr[3][0]
- var s = 0;   
- var b = arr.length;
- for(var i = 0;i<b;i++)
- {
-    s+=arr[i][b-1-i];
- }
+
  
 function diagonal(arr)
 {
+    var s = 0;   
+    var b = arr.length;
+    for(var i = 0;i<b;i++)
+    {
     
+        //     0  4-1-0 
+        s+=arr[i][b-1-i];
+    }
     return .....
 }
-var arr = [[1,2,3],
-           [4,5,6],
-           [7,8,9]];
+var arr = [[1,2,3,1,1],
+           [4,5,6,1,1],
+           [7,8,9,1,1],
+           [2,2,2,2,2],
+           [3,3,3,3,3]];
 diagonal(arr);     //25
 
 function sidezero(arr,x,y)

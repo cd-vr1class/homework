@@ -1,0 +1,10 @@
+1 C# 检测控制台输入  并在控制台原样输出 
+
+2 js:
+function insertDash(num)
+{
+
+}  
+Test.assertEquals(insertDash(454793),'4547-9-3');
+Test.assertEquals(insertDash(123456),'123456');
+Test.assertEquals(insertDash(1003567),'1003-567');

@@ -1,0 +1,34 @@
+﻿<html>
+<head>
+<script>
+
+function Capital(w)
+{
+    return w.split('').reduce(function(x,y,i)
+    {
+        if(y.toUpperCase()==y)
+            x.push(i);
+        return x;
+    },[]);
+}
+
+1  2   4   8   16
+       a   b    c
+function two(a,b,n)
+{
+    if(n==0)
+        return a;
+    var c = -6*a*b/(b-5*a);
+    return two(b,c,n-1);    
+}
+two(2);//4
+two(5);//32  
+
+6ab - 5ac  +bc=0
+    (b-5a)c = -6ab
+          c = -6ab/(b-5a);         
+</script>
+</head>
+<body>
+</body>
+</html>

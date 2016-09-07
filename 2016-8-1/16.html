@@ -8,13 +8,16 @@ for(var i = 1;i<=6;i++)
     {
         if(i==j)
             continue;
-        for(var k=1;k<=6;k++){
+        for(var k=1;k<=6;k++)
+        {
             if(k==i||k==j)
                 continue;
-            for(var m=1;m<=6;m++){
+            for(var m=1;m<=6;m++)
+            {
                 if([i,j,k].indexOf(m)!=-1)
                     continue;
-                for(var n=1;n<=6;n++){
+                for(var n=1;n<=6;n++)
+                {
                     if([i,j,k,m].indexOf(n)!=-1)
                         continue;
                     for(var o=1;o<=6;o++)
@@ -30,7 +33,6 @@ for(var i = 1;i<=6;i++)
                             }
                         }
                     }
-                    
                 }
             }
         }

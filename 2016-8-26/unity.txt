@@ -1,0 +1,16 @@
+1  鸟向下掉    重力  (rigidbody 刚体)
+2  鸟向上飞    向上的速度  (velocity 速度)
+3  点击        Get Mouse Button Down/Up
+4  地板跟鸟发生碰撞    
+               碰撞的条件 :  两个物体都要有碰撞体  至少有一个是刚体
+5  地板的移动  Move Towards    
+6  地板的生成  预制体(prefab)    CreateObject    
+                                 Wait 
+                                 
+                                 
+7   随机一个小数  RandomFloat     设置坐标 SetPosition                               
+
+8   自杀     DestroySelf
+
+9   碰撞事件  Collision Event
+10  游戏时间的缩放   Scale Time   0(暂停)  0.5(减速)    1 (正常)     2(加速) 3 4

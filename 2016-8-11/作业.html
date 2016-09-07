@@ -25,8 +25,9 @@ function join(arr,str)
         s+=arr[i];
         s+=',';
     }
-    return s;
+    return s.substr(0,s.length-1);
 }
+join([1,2,3],',');
 </script>
 </head>
 <body>

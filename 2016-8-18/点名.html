@@ -3,17 +3,19 @@
 <script>
 function CheckName(names)
 {
-    var index = 0;
     var next = function ()
     {
+        if(names.length==0)
+            return alert("已经点完了");
+        var index = parseInt(Math.random()*names.length);
         txt.innerHTML = names[index];
-        index = (index+1)%names.length;
+        names.splice(index,1);
     }
     return next;
 }
 var getname = CheckName(['张三','李四','王五']);
 //计时器      每隔多少秒  干什么事情
-var tsk = setInterval(getname,1000);
+var tsk = setInterval(getname,100);
 </script>
 </head>
 <body>

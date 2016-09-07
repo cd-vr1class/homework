@@ -1,0 +1,32 @@
+﻿<html>
+<head>
+<script>
+//判断一个数是不是合数
+function isNoPrim(n)
+{
+    for(var i=2;i<n;i++)
+    {
+        if(n%i==0)
+            return false;
+    }
+    return true;
+}
+//n以内合数的个数
+function countNoPrim(n)
+{
+    var count=0;
+    for(var i=2;i<=n;i++)
+    {
+        if(isNoPrim(i))
+            count++;
+    }
+    return count;
+}
+
+
+
+</script>
+</head>
+<body>
+</body>
+</html>

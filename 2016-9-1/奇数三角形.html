@@ -1,0 +1,68 @@
+﻿<html>
+<head>
+<script>
+//1、搞清楚题目要求！！  2、想好怎解决    3、开始用代码表达想法
+//
+
+//       1                 1       1             1*1*1         
+//      3 5                4       8             2*2*2
+//     7 9 11              9       27            3*3*3
+//   13 15 17 19           16      64            4*4*4
+// 21 23 25 27 29          25      125           5*5*5
+ 
+// 1  0
+// 2  1
+// 3  3
+// 4  6
+// 5  10
+//第一种
+function sumq1(n)
+{
+    return Math.pow(n,3);         
+} 
+//Math.pow(x,y);//x的y次方
+//第二种
+function sum(x)
+{
+    var s = 0;
+    for(var i = 0;i<=x;i++)
+    {
+        s+=i;
+    }
+    return s;
+}
+
+function sumq2(n)
+{
+    var bc = sum(n-1);
+    var start = bc*2+1;
+    var s = 0;
+    for(var i=0;i<n;i++)
+    {
+        s+=start;
+        start+=2;
+    }
+    return s;
+}
+//第三种
+
+function sumq3(n)
+{
+    var c = sum(n);
+    var arr = [];
+    for(var i=0;i<c;i++)
+    {
+        arr.push(2*i+1);
+    }
+    return arr.reverse().slice(0,n).reduce(function (x,y){return x+y;});
+}
+
+
+ 
+ 
+
+</script>
+</head>
+<body>
+</body>
+</html>

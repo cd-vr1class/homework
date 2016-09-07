@@ -9,7 +9,7 @@ function Snake()
                 [0,0,1,0],
                 [0,0,0,0]];
     this.dir = -2;    // -1 左 1 右  -2 上 2 下
-    this.points = [[1,2],[2,2]];
+    this.points = new Queue();
     this.food = [1,1];
     this.show = function ()
                 {
@@ -47,9 +47,6 @@ function Snake()
                 }
             }
         }
-        
-        
-        
     }
     this.f = function (i,j,div)
     {
@@ -62,6 +59,7 @@ function Snake()
     }
     this.initHTML=function ()
     {
+        
         for(var i in this.arr)
         {
             var d = [];
@@ -116,6 +114,8 @@ function Snake()
 
 
 var s = new Snake();
+s.points.enqueue([2,2]);
+s.points.enqueue([1,2]);
 function f(e)
 {
     if(e.keyCode==37)

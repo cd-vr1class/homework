@@ -1,0 +1,30 @@
+﻿<html>
+<head>
+
+</head>
+<body>
+<script>
+//if
+//switch
+//for
+//for...in
+//while
+//do...while
+Test.describe("Testing For Vampire Numbers", function(){
+  Test.it("should work for some static tests", function(){
+    Test.assertEquals(vampire_test(21,6), true, "Basic: 21 * 6 = 126 should return true")
+    Test.assertEquals(vampire_test(204,615) , true, "Basic: 204 * 615 = 125460 should return true")
+    Test.assertEquals(vampire_test(30,-51) , true, "One Negative: 30 * -51 = -1530 should return true")
+    Test.assertEquals(vampire_test(-246,-510) , false, "Double Negatives: -246 * -510 = 125460 should return false (The negative signs aren't present on the product)")
+    Test.assertEquals(vampire_test(2947050,8469153) , true, "Large: 2947050 * 8469153 = 24959017348650 should return true")
+    Test.assertEquals(vampire_test(2947051,8469153) , false, "Large: 2947051 * 8469153 = 24959025817803 should return false")    
+  
+function vampire_test(x,y)
+{
+
+}
+
+</script>
+
+</body>
+</html>

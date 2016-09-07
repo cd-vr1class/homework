@@ -1,5 +1,6 @@
 ﻿//形式参数 形参        28   "制热"
-function airCondition(temp,mode){
+function airCondition(temp,mode)
+{
     if(temp>25)
     {
         if(mode=="制冷")
@@ -24,7 +25,6 @@ function airCondition(temp,mode){
         }
     }
 }
-
 airCondition(23,"制热");//实际参数 实参
 airCondition(21,"制冷");
 airCondition(28,"制热");

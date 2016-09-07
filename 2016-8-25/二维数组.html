@@ -1,0 +1,82 @@
+﻿<html>
+<head>
+<script>
+//怎么造一个二维数组
+//怎么取二维数组里的元素
+//怎么遍历二维数组
+//[[0,0,0,0],
+ //[0,1,0,0],
+ //[1,1,1,1],
+ //[0,1,0,0]]   
+ 
+ //[0,0,0,0]
+ //[0,1,0,0]
+ //[1,0,0,1]
+ //[0,1,0,0]
+
+ //规则1  值为1的点周围1的个数大于3的话    会因为人太多挤死
+function rule1(arr)
+{
+    var narr=[]; 
+    for(var i =0;i<arr.length;i++)
+    {
+        var na = [];
+        for(var j=0;j<arr[i].length;j++)
+        {
+            if(arr[i][j]==1)
+            {
+                if(sideOne(arr,i,j)>3)
+                    na.push(0);
+                else
+                    na.push(1);
+                    
+            }else
+            {
+               na.push(arr[i][j]); 
+            }
+        }
+        narr.push(na);
+    }
+    return narr;
+}
+function sideOne(arr,x,y)
+{
+    var count = 0;
+    for(var i=-1;i<=1;i++)
+    {
+        for(var j = -1;j<=1;j++)
+        {
+            if(i==0&&j==0)
+                continue;
+            var nx = x+i;
+            var ny = y+j;
+            if(arr[nx]==undefined || arr[nx][ny]==undefined)
+                continue;
+            if(arr[nx][ny]==1)
+                count++;
+        }
+    }
+    return count;
+}
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ //规则2  值为1的点周围1的个数小于2的话    会因为人太少孤单死
+ //规则3  值为0的点周围1的个数等于3        会复活  从 0-> 1
+
+</script>
+</head>
+<body>
+</body>
+</html>

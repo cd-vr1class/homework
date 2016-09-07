@@ -1,0 +1,169 @@
+﻿<html>
+<head>
+<script>
+function MineSweeper(n,m)
+{
+    //n=5
+    //  [[0,0,0,0,0],
+    //   [0,0,0,0,0],
+    //   [0,0,0,0,0],
+    //   [0,0,0,0,0],
+    //   [0,0,0,0,0]]
+    this.initEmpty = function()
+    {
+        var s = [];
+        for(var i =0;i<n;i++)
+        {
+            s.push(this.nzero(n));
+        }
+        return s;
+    }
+    this.nzero = function(n)
+    {
+        var s = [];
+        for(var i=0;i<n;i++)
+        {
+            s.push(0);
+        }
+        return s;
+    }
+    this.data = this.initEmpty();
+    this.check = this.initEmpty();///  0没点开 1点开了
+    this.randomMine = function ()
+    {
+        for(var i=0;i<m;i++)
+        {
+            var x = parseInt(Math.random()*n);
+            var y = parseInt(Math.random()*n);
+            if(this.data[x][y]==-1)
+            { 
+                i--;
+                continue;
+            }
+            this.data[x][y]=-1;
+        }
+    }
+    this.mineInit = function ()
+    {
+        
+        for(var i =0;i<this.data.length;i++)
+        {
+            for(var j=0;j<this.data[i].length;j++)
+            {
+                if(this.data[i][j]==-1)
+                    continue;
+                else
+                {
+                    this.data[i][j]=this.zz(this.data,i,j);
+                }
+            }
+        }
+    } 
+    this.zz = function (arr,x,y)
+    {
+        var count=0;
+        for(var i=-1;i<=1;i++)
+        {
+            for(var j=-1;j<=1;j++)
+            {
+                if(i==0&&j==0)
+                    continue;
+                var nx = x+i;
+                var ny = y+j;
+                if(arr[nx]!=undefined && arr[nx][ny]==-1)
+                    count++;
+            }
+        }
+        return count;
+    } 
+    
+    this.initHTML = function ()
+    {
+        var divs = [];
+        for(var i=0;i<n;i++)
+        {
+            var div = [];
+            for(var j=0;j<n;j++)
+            {
+                var d = document.createElement('div');
+                d.style.width = '50px';
+                d.style.height = '50px';
+                d.style.position = 'absolute';
+                d.style.top = i*50+'px';
+                d.style.left = j*50+'px';
+                d.style.background = 'gray';
+                d.style.border = "1px red solid";
+                document.body.appendChild(d);
+                div.push(d);
+            }
+            divs.push(div);
+        }
+        return divs;
+    }
+    this.click = function (x,y)
+    {
+        if(this.data[x][y]==0)
+            this.clickSpace(x,y);
+        else
+        {
+            this.open(x,y);
+        }
+    }
+    this.open=function (x,y)
+    {
+        this.check[x][y] = 1;
+        this.divs[x][y].style.background = "";
+        this.divs[x][y].innerHTML = this.data[x][y];
+    }
+    
+    this.clickSpace = function(x,y)
+    {
+        this.open(x,y);
+        //遍历周围的格子
+        for(var i=-1;i<=1;i++)
+        {
+            for(var j=-1;j<=1;j++)
+            {
+                if(i==0&&j==0)
+                    continue;
+                var nx = x+i;
+                var ny = y+j;
+                if(this.check[nx]==undefined || this.check[nx][ny] == undefined)
+                    continue;
+                if(this.check[nx][ny]==1)
+                    continue;
+                else
+                {
+                    if(this.data[nx][ny]==0)
+                        this.clickSpace(nx,ny);
+                    else
+                        this.open(nx,ny);
+                }
+            }
+        }
+        //如果格子已经点开了  结束本次循环
+        //if(this.check[xxxxx][yyyyyy]==1)
+            //结束循环
+        //没点开的话，判断这个格子是不是空白
+        //如果是空白   递归调用 clickSpace(当前遍历的格子的坐标  x,y)
+        //不是空白  点开遍历的格子
+    }
+    this.divs = [];
+    this.init = function ()
+    {
+        this.randomMine();
+        this.mineInit();
+        this.divs = this.initHTML();
+    }
+}
+
+
+ 
+ 
+var min = new MineSweeper(9,10);
+ //mineInit(arr);
+</script>
+</head>
+<body onload="min.init()">
+</body>
+</html>

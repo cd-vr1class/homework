@@ -1,0 +1,32 @@
+﻿<html>
+<head>
+<script>
+//[1,2,3,4] [2,3,5,8]    ->   [1,4]
+function different(a,b)
+{
+    var s = [];
+    for(var i in a)
+    {
+        if(b.indexOf(a[i])==-1)
+        {
+            s.push(a[i]);
+        }
+    }
+    return s;
+}
+
+
+var arr = [1,2,4,6];
+for(var i = 0;i<arr.length;i++)
+{
+    if(arr[i]%2==0)
+        arr.splice(i,1);
+}
+console.log(arr);
+
+
+</script>
+</head>
+<body>
+</body>
+</html>

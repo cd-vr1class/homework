@@ -1,0 +1,35 @@
+﻿<html>
+<head>
+<script>
+function bus(n)    // [[10,0],[3,8],[2,5]]
+{
+    var s = 0;
+    for(var i in n)   //"0"  "1" "2"
+    {
+        s+=n[i][0];    //有人上车了
+        s-=n[i][1];
+    }
+    return s;
+}
+uGui
+function bus2(n)
+{
+    return n.reduce(function (x,y)
+    {
+        return x+y[0]-y[1];
+    },0);
+}
+
+function bus3(n)
+{
+    if(n.length==0)
+        return 0;
+    return n[0][0]-n[0][1] + bus3(n.slice(1));
+}
+
+
+</script>
+</head>
+<body>
+</body>
+</html>

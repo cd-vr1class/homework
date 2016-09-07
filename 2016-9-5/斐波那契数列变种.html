@@ -1,0 +1,35 @@
+﻿<html>
+<head>
+<script>
+
+//[1,2,3]  6     [1,2,3,6,11,20]   
+
+function xibonacci(arr,n)
+{
+    var len = arr.length;
+    var s = arr.concat([]);
+    if(n<=len)
+        return arr.slice(0,n);
+    while(s.length!=n)
+    {
+        var next = 0;
+        for(var i=s.length-1;i>=s.length-len;i--)
+        {
+            next+=s[i];
+        }
+        s.push(next);
+    }    
+    return s;
+}
+
+function lastNSum(arr1,n1)
+{
+    var arr2 = arr1.concat([]);
+    return arr2.reverse().slice(0,n1).reduce(function (x,y){return x+y;});
+}
+
+</script>
+</head>
+<body>
+</body>
+</html>
