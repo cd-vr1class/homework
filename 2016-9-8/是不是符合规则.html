@@ -1,0 +1,22 @@
+﻿<html>
+<head>
+<script>
+//89, 1       8^1 + 9^2 =  @        @%89==0   @/89  -1
+//695,2       6^2 + 9^3 + 5^4 = @   @%695==0  @/695 -1  
+function isrule(m,n)
+{
+    var s = m+"";
+    var c = 0;
+    for(var i=0;i<s.length;i++)
+    {
+        c+=Math.pow(parseInt(s[i]),n+i);
+    }
+    return c%m==0?c/m:-1;
+}
+
+
+</script>
+</head>
+<body>
+</body>
+</html>
