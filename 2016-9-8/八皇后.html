@@ -1,0 +1,47 @@
+﻿<html>
+<head>
+<script>
+function f(n,arr)
+{
+    var a = [];
+    for(var i in arr)
+    {
+        for(var j=0;j<8;j++)
+        {
+            var c = arr[i].filter(function(x){return canEat(x,[j,n]);});
+            if(c.length==0)
+                a.push(arr[i].concat([[j,n]]));
+        }
+    }
+    return a;
+}
+
+function canEat(p1,p2)
+{
+    
+    if(p1[0]==p2[0]||p1[1]==p2[1])
+        return true;
+    if(p1[0]-p1[1]==p2[0]-p2[1]||p1[0]+p1[1]==p2[0]+p2[1])
+        return true;
+    return false;
+}
+function zeroqueen()
+{
+    var arr =[];
+    for(var i=0;i<8;i++) 
+        arr.push([[i,0]]);
+    return arr;
+}
+
+function   eightqueen(n)
+{
+    if(n==0)
+        return zeroqueen();
+    return f(n,eightqueen(n-1));
+}
+console.log(eightqueen(7));
+</script>
+</head>
+<body>
+</body>
+</html>
