@@ -1,0 +1,20 @@
+1    function good(arr,x)
+     {
+
+     }
+
+判断x是否大于数组的平均数
+good([1,2,3],3);//true
+good([4,6,8],5);//false
+
+2    传入一个数 判断是否符合某规则
+
+
+       得到每一位相加的结果   判断传入的数是否能被相加的结果整除
+588    5+8+8 =21              588%21==0 ? true:false;
+
+function isValid(n){}
+
+isValid(588);//true    5+8+8 = 21   588/21=28
+isValid(27); //true    2+7=9        27/9=3
+isValid(19);//false    1+9=10       19/10 = 1.9 
