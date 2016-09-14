@@ -1,0 +1,30 @@
+﻿<html>
+<head>
+<script>
+
+function smallest(n)
+{
+    var arr = (n+"").split("");
+    var org = arr.concat([]);
+    arr.sort();
+    for(var i in arr)
+    {
+        if(org[i]!=arr[i])
+            break;
+    }
+    var ele = arr[i];
+    var j = org.indexOf(ele);
+    org.splice(j,1);
+    var p1 = org.slice(0,i);
+    var p2 = org.slice(i);
+    p1.push(ele);
+    var nstr = p1.concat(p2).join('');
+    return Math.abs(i-j)==1?[Number(nstr),Number(i),j]:[Number(nstr),j,Number(i)];
+    
+}
+
+</script>
+</head>
+<body>
+</body>
+</html>

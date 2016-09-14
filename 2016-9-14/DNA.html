@@ -1,0 +1,25 @@
+﻿<html>
+<head>
+<script>
+
+function dna(seq1,seq2)
+{
+    //Map数据结构
+    var dnamath = {A:"T",T:"A",C:"G",G:"C"};
+    if(seq1.length!=seq2.length)
+        return false;
+    for(var i in seq1)
+    {
+        if(dnamath[seq1[i]]!=seq2[i])
+            return false;
+    }
+    return true;
+}
+
+consoledna("AGCT","TCGA");//true
+
+</script>
+</head>
+<body>
+</body>
+</html>
