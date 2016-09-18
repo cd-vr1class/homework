@@ -1,0 +1,32 @@
+﻿<html>
+<head>
+<script>
+function isValid(n)
+{
+    var s = n+"";
+    var c = 0;
+    for(var i in s)
+    {
+        c+=Number(s[i]);
+    }
+    return n%c==0;
+}
+
+function isValid2(n)
+{
+    var m = n;
+    var c = 0;
+    while(m!=0)
+    {
+        c+=m%10;
+        m=parseInt(m/10);
+    }
+    return n%c==0;
+}
+
+
+</script>
+</head>
+<body>
+</body>
+</html>
