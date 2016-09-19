@@ -1,0 +1,5 @@
+function removeNoise(str){}
+
+写一个函数，把字符串中的"%$&/#·@"去掉
+var test1 = "h%e&·%$·llo w&%or&$l·$%d";
+removeNoise(test1)// "hello world"
