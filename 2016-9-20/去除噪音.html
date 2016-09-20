@@ -1,0 +1,32 @@
+﻿<html>
+<head>
+<script>
+function removeNoise(str)
+{
+    var noise = "%$&/#·@";
+    var s = "";
+    for(var i in str)
+    {
+        if(noise.indexOf(str[i])==-1)
+        {
+            s+=str[i];
+        }
+    }
+    return s;
+}
+function removeNoise2(str)
+{
+    
+    return str.replace(/[%$&\/#·@]/g,"");
+}
+
+var test1 = "h%e&·%$·llo w&%or&$l·$%d";
+removeNoise(test1);
+var c = removeNoise2(test1);
+console.log(c);
+
+</script>
+</head>
+<body>
+</body>
+</html>
