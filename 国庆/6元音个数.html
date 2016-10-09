@@ -1,0 +1,19 @@
+﻿<html>
+<head>
+    <script>
+        function yuan(s)
+        {
+            var dic = { a: 0, e: 0, i: 0, o: 0, u: 0 };
+            for (var i in s)
+            {
+                if (dic[s[i]] != undefined)
+                    dic[s[i]]++;
+            }
+            return dic;
+        }
+
+    </script>
+
+</head>
+
+</html>

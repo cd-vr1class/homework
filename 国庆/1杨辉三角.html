@@ -1,0 +1,23 @@
+﻿<html>
+<head>
+<script>
+
+function pascal(n)
+{
+    var arr = [1];
+    for(var i=1;i<n;i++)
+    {
+        var na1 = [0].concat(arr);
+        var na2 = arr.concat([0]);
+        for(var j=0;j<na1.length;j++)
+        {
+            arr[j] = na1[j]+na2[j];   
+        }
+    }
+    return arr;
+}
+
+</script>
+</head>
+
+</html>

@@ -1,0 +1,23 @@
+﻿<html>
+<head>
+    <script>
+        function LatinPig(s)
+        {
+            var str = "aeiou";
+            for (var i in s)
+            {
+                if (str.indexOf(s[i]) == -1)
+                {
+                    break;
+                }
+            }
+            var arr = s.split('');
+            var f = arr.splice(i, 1);
+            return arr.join('') + "-" + f + "ay";
+        }
+
+    </script>
+
+</head>
+
+</html>
