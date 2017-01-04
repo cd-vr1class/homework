@@ -46,3 +46,53 @@ var
 
 + - * /  %
 %  取余  
+
+
+算术
+赋值运算符
+比较  
+逻辑   
+位运算
+一 假  二 假  三 假
+
+if(条件一)
+{
+    alert('a');
+}
+else if(条件二)
+{
+    alert('b');
+}
+else if(条件三)
+{
+    alert('c');
+}
+else 
+{
+    alert('d');
+}
+
+var x = 110;
+if(x<0)
+{
+   alert("错误数据");
+}
+else if(x<60)
+{
+    alert('差');
+}else if(x<70)
+{
+    alert('中');
+}else if(x<90)
+{
+    alert('良');
+}else if(x<=100)
+{
+    alert('优');
+}else 
+{
+    alert("错误数据");
+}
+
+
+

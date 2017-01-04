@@ -1,0 +1,39 @@
+﻿递归
+
+
+function sum(n)  //n:2
+{
+	if(n==1)
+		return 1;
+	return n+sum(n-1);
+}
+
+
+
+fibnacci 数列 
+function fib(n)
+{
+	if(n==1 || n==2)
+		return 1;
+	return fib(n-1)+fib(n-2);
+}
+
+var f = function(x,y){return x+y;};
+function bag(v,w,m)
+{
+    if(w.length==0)
+		return 0;
+	if(w.reduce(f)<=v)
+	{
+		return m.reduce(f);
+	}
+	var nofirst = bag(v,w.slice(1),m.slice(1));
+	var hasfirst = m[0]>v ? nofirst : m[0] + bag(v-w[0],w.slice(1),m.slice(1));
+	console.log(nofirst);
+	console.log(hasfirst);
+	return hasfirst>nofirst?hasfirst:nofirst;
+}
+
+
+
+

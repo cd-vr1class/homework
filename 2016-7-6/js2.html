@@ -4,24 +4,74 @@
 </head>
 
 <body>
+<input id="a"/> <button onclick="numcolor();">确定</button>
+<div id="b" style="width:100px;height:100px;background:yellow"></div>
 <script>
-var d = document.createElement('div');
-d.style.width = "100px";
-d.style.height = "100px";
-d.style.border = "1px red solid"; 
-document.body.appendChild(d);
+function numcolor()
+{
+    
+    if(a.value==1)
+	    b.style.background = "b";
+    else if(a.value==2)
+		b.style.background = "green";
+	else if(a.value==3)
+		b.style.background = "blue";
+	else 
+		b.style.background = "yellow";
+}
+    var n = 1;
+	var m = "";
+	switch(n)
+	{
+		case 1:
+			m="a";
+			break;
+		case 3:
+		    m="b";
+			break;
+		default:
+		    m="c";
+			break;
+	}
+    //m=="b" true
+	//m=="c"
+	//m=="a"
+	
+	var n = "1";
+	var m = "";
+	switch(n)
+	{
+		case 1:
+			m="a";
+			break;
+		case 2:
+			m="b";
+			break;
+		default:
+			m="c";
+			break;
+	}
 
-var d = document.createElement('div');
-d.style.width = "100px";
-d.style.height = "100px";
-d.style.border = "1px red solid"; 
-document.body.appendChild(d);
-var f = document.createElement('font');
-f.style.fontSize="88";
-f.style.position = "relative";
-f.style.left = "50px";
-f.textContent = "乾";
-d.appendChild(f);
+
+
+三目运算符
+    var n = 12;
+	var m = n%3==0?"haha":"heihei";
+
+	var n = 14;
+	var m = n%3==0?"haha":"heihei";
+	
+	var x = 3;
+	var y = (x*x)%2==0?"a":"b";
+	
+120015212150
+5245
+000
+数值 Number
+
+字符串 String
+
+布尔类型 Boolean    true false  
 
 </script>
 
